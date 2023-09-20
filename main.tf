@@ -12,7 +12,7 @@ resource "aws_security_group" "main" {
   name        = local.sg_name
   description = local.sg_name
   vpc_id      = var.vpc_id
-  tags = merge(local.tags, {Name = "${var.env}-alb-sg"})
+  tags = merge(local.tags, {Name = local.sg_name)
 
   ingress {
     description      = "APP"
